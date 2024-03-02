@@ -5,7 +5,7 @@ plugins {
 
 }
 val room_version = "2.6.1"
-
+val koin_version = "3.5.3"
 android {
     namespace = "edu.festu.ivankuznetsov.roomcomposesample"
     compileSdk = 34
@@ -53,6 +53,8 @@ android {
 }
 
 dependencies {
+ //   implementation("io.insert-koin:koin-android:$koin_version")
+    implementation("io.insert-koin:koin-androidx-compose:$koin_version")
 
     implementation("androidx.room:room-runtime:$room_version")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")

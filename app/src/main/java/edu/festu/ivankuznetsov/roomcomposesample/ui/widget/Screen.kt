@@ -9,20 +9,19 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewModelScope
-import androidx.lifecycle.viewmodel.compose.viewModel
 import edu.festu.ivankuznetsov.roomcomposesample.database.entity.Event
 import edu.festu.ivankuznetsov.roomcomposesample.database.entity.embedded.EventInfo
 import edu.festu.ivankuznetsov.roomcomposesample.ui.model.EventModel
-import edu.festu.ivankuznetsov.roomcomposesample.ui.viewmodel.AppViewModelProvider
 import edu.festu.ivankuznetsov.roomcomposesample.ui.viewmodel.EventListViewModel
 import kotlinx.coroutines.launch
+import org.koin.androidx.compose.koinViewModel
 import java.time.LocalDateTime
 
 
 @Composable
 fun Screen(
     modifier: Modifier = Modifier,
-    eventViewModel: EventListViewModel = viewModel(factory = AppViewModelProvider.Factory)
+    eventViewModel: EventListViewModel = koinViewModel()
 ) {
     val eventListState by eventViewModel.retrieveEvents().collectAsState(listOf())
     Column(horizontalAlignment = Alignment.CenterHorizontally) {

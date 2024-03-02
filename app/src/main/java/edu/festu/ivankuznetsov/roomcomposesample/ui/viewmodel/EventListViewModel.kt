@@ -2,7 +2,6 @@ package edu.festu.ivankuznetsov.roomcomposesample.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import edu.festu.ivankuznetsov.roomcomposesample.database.entity.Event
-import edu.festu.ivankuznetsov.roomcomposesample.database.repository.CRUDRepository
 import edu.festu.ivankuznetsov.roomcomposesample.database.repository.EventRepository
 
 
